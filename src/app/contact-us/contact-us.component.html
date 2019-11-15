@@ -1,0 +1,59 @@
+<app-header></app-header>
+<div class="layout-2cols">
+    <div class="content grid_8">
+        <div class="single-page">
+            <div class="wrapper-box box-post-comment">
+                <h2 class="common-title">Contact Us</h2>
+                <div class="box-white">
+                    <form id="contact-form" class="clearfix" (ngSubmit)="myFunc($input)">
+                        <p class="rs pb30">The purpose of the talent marketplace is to help creators get their idea from the idea stage to the
+                            fundraising stage.Feel free to contact us regarding any sort of query regarding projects or funds.</p>
+                        <div class="form form-post-comment">
+                            <div class="left-input">
+                                <label for="txt_name_contact">
+                                    <input id="txt_name_contact" type="text" name="name" class="txt fill-width txt-name" placeholder="Enter Your Name" />
+                                </label>
+                                <label for="txt_email_contact">
+                                    <input id="txt_email_contact" type="email" name="email" class="txt fill-width txt-email" placeholder="Enter Your Email" value="shubhamsharmacr7@gmail.com"
+                                    />
+                                </label>
+                            </div>
+                            <div class="right-input">
+                                <label for="txt_content_contact">
+                                    <textarea name="message" id="txt_content_contact" cols="30" rows="10" class="txt fill-width" placeholder="Your message"></textarea>
+                                </label>
+                            </div>
+                            <div class="clear"></div>
+                            <p class="rs ta-r clearfix">
+                                <span id="response"></span>
+
+                                <input type="submit" class="btn btn-white btn-submit-comment" value="Send">
+                            </p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!--end: .box-list-comment -->
+        </div>
+    </div>
+    <!--end: .content -->
+    <div class="sidebar grid_4">
+        <div class="box-gray">
+            <h3 class="title-box">Contact info</h3>
+            <p class="rs description pb20">Feel free to contact us regarding any sort of query regarding projects or funds.</p>
+            <p class="rs pb20">
+                <span class="fw-b">Address</span>:Aurobindo Hostel , MNIT Jaipur
+            </p>
+            <p class="rs pb20">
+                <span class="fw-b">Phone</span>: +918090038230 (9AM - 6PM IST)
+            </p>
+            <p class="rs pb20">
+                <span class="fw-b">Email</span>:
+                <a href="mailto:shubhamsharmacr7@gmail.com" class="be-fc-orange">shubhamsharmacr7@gmail.com</a>
+            </p>
+        </div>
+    </div>
+    <!--end: .sidebar -->
+    <div class="clear"></div>
+</div>
+<app-footer></app-footer>

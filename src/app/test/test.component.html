@@ -1,0 +1,8 @@
+<app-header></app-header>
+My name is {{name1}}
+
+<form #f="ngForm" (ngSubmit)=myFunc(f)>
+    <input type="text" id="name" name="name" ngModel #name="ngModel" />
+    <button type="submit">Submit</button>
+</form>
+<app-footer></app-footer>

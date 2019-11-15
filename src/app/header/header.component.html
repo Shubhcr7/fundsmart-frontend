@@ -1,0 +1,183 @@
+<header id="header">
+    <div class="wrap-top-menu">
+        <div class="container_12 clearfix">
+            <div class="grid_12">
+                <nav class="top-menu">
+                    <ul id="main-menu" class="nav nav-horizontal clearfix">
+                        <li class="active">
+                            <a routerLink="/">Home</a>
+                        </li>
+                        <li class="sep"></li>
+                        <li>
+                            <a routerLink="/all-pages">All Pages</a>
+                        </li>
+                        <li class="sep"></li>
+                        <li>
+                            <a routerLink="/project">View-Projects</a>
+                        </li>
+                        <li class="sep"></li>
+                        <li>
+                            <a routerLink="/contact">Contact</a>
+                        </li>
+                    </ul>
+                    <a id="btn-toogle-menu" class="btn-toogle-menu" href="#alternate-menu">
+                        <span class="line-bar"></span>
+                        <span class="line-bar"></span>
+                        <span class="line-bar"></span>
+                    </a>
+                    <div id="right-menu">
+                        <ul class="alternate-menu">
+                            <li>
+                                <a routerLink="/">Home</a>
+                            </li>
+                            <li>
+                                <a routerLink="/all-pages">All Pages</a>
+                            </li>
+                            <li>
+                                <a routerLink="/project">View-Projects</a>
+                            </li>
+                            <li>
+                                <a routerLink="/contact">Contact us</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+                <div class="top-message clearfix">
+                    <!-- <i class="icon iFolder"></i> -->
+                    <span class="txt-message">A crowdfunding platform based on blockchain technology</span>
+                    <!-- <i class="icon iX"></i> -->
+                    <div class="clear"></div>
+                </div>
+                <i id="sys_btn_toggle_search" class="icon iBtnRed make-right"></i>
+            </div>
+        </div>
+    </div>
+    <!-- end: .wrap-top-menu -->
+    <div class="container_12 clearfix">
+        <div class="grid_12 header-content">
+            <div id="sys_header_right" class="header-right">
+                <div class="account-panel">
+                    <a href="#" class="btn btn-red sys_show_popup_login">Register</a>
+                    <a href="#" class="btn btn-black sys_show_popup_login">Login</a>
+                </div>
+                <div class="form-search">
+                    <form action="#">
+                        <label for="sys_txt_keyword">
+                            <input id="sys_txt_keyword" class="txt-keyword" type="text" placeholder="Search projects" />
+                        </label>
+                        <button class="btn-search" type="reset">
+                            <i class="icon iMagnifier"></i>
+                        </button>
+                        <button class="btn-reset-keyword" type="reset">
+                            <i class="icon iXHover"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class="header-left">
+                <h1 id="logo">
+                    <a routerLink="/">
+                        <img src="assets/images/logo.png" alt="$SITE_NAME" />
+                    </a>
+                </h1>
+                <div class="main-nav clearfix">
+                    <div class="nav-item">
+                        <a href="category.html" class="nav-title">Discover</a>
+                        <p class="rs nav-description">Great Projects</p>
+                    </div>
+                    <span class="sep"></span>
+                    <div class="nav-item">
+                        <a routerLink="/create-project" class="nav-title">Start</a>
+                        <p class="rs nav-description">Your Project</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<!--end: #header -->
+
+<!-- login and registration  -->
+<div class="popup-common" id="sys_popup_common">
+    <div class="overlay-bl-bg"></div>
+    <div class="container_12 pop-content">
+        <div class="grid_12 wrap-btn-close ta-r">
+            <i class="icon iBigX closePopup"></i>
+        </div>
+        <div class="grid_6 prefix_1">
+            <div class="form login-form">
+                <form action="#">
+                    <h3 class="rs title-form">Register</h3>
+                    <div class="box-white">
+                        <h4 class="rs title-box">New to FundsMart?</h4>
+                        <p class="rs">A FundsMart account is required to continue.</p>
+                        <div class="form-action">
+                            <label for="txt_name">
+                                <input id="txt_name" class="txt fill-width" type="text" placeholder="Enter full name" />
+                            </label>
+                            <div class="wrap-2col clearfix">
+                                <div class="col">
+                                    <label for="txt_email">
+                                        <input id="txt_email" class="txt fill-width" type="email" placeholder="Enter your e-mail address" />
+                                    </label>
+                                    <label for="txt_re_email">
+                                        <input id="txt_re_email" class="txt fill-width" type="email" placeholder="Re-enter your e-mail adress" />
+                                    </label>
+                                </div>
+                                <div class="col">
+                                    <label for="txt_password">
+                                        <input id="txt_password" class="txt fill-width" type="password" placeholder="Enter password" />
+                                    </label>
+                                    <label for="txt_re_password">
+                                        <input id="txt_re_password" class="txt fill-width" type="password" placeholder="Re-enter password" />
+                                    </label>
+                                </div>
+                            </div>
+                            <p class="rs pb10">By signing up, you agree to our
+                                <a href="#" class="fc-orange">terms of use</a> and
+                                <a href="#" class="fc-orange">privacy policy</a>.</p>
+                            <p class="rs ta-c">
+                                <button class="btn btn-red btn-submit" type="submit">Register</button>
+                            </p>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="grid_4">
+            <div class="form login-form">
+                <form #f="ngForm" (ngSubmit)="submit(f)">
+                    <h3 class="rs title-form">Login</h3>
+                    <div class="box-white">
+                        <h4 class="rs title-box">Already Have an Account?</h4>
+                        <p class="rs">Please log in to continue.</p>
+                        <div class="form-action">
+                            <label for="txt_email_login">
+                                <input id="txt_email_login" class="txt fill-width" type="email" required placeholder="Enter your e-mail address" ngModel
+                                    name="txt_email_login" #txt_email_login="ngModel" />
+                                <div class="form-control alert-danger" *ngIf="txt_email_login.invalid && txt_email_login.touched">Invalid entry</div>
+                            </label>
+                            <label for="txt_password_login">
+                                <input id="txt_password_login" class="txt fill-width" type="password" required placeholder="Enter password" ngModel name="txt_password_login"
+                                    #txt_password_login="ngModel" />
+                                <div class="form-control alert-danger" *ngIf="txt_password_login.invalid && txt_password_login.touched">Invalid entry</div>
+                            </label>
+
+                            <label for="chk_remember" class="rs pb20 clearfix">
+                                <input id="chk_remember" type="checkbox" class="chk-remember" />
+                                <span class="lbl-remember">Remember me</span>
+                            </label>
+                            <p class="rs ta-c pb10">
+                                <button class="btn btn-red btn-submit" [disabled]="!f.valid && !f.touched" type="submit">Login</button>
+                            </p>
+                            <p class="rs ta-c">
+                                <a href="#" class="fc-orange">I forgot my password</a>
+                            </p>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>

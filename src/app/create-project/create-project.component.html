@@ -1,0 +1,63 @@
+<app-header></app-header>
+<div class="container" style="border-style:solid">
+    <div>
+        <h1>
+
+            <br> Fill in the required details of your idea </h1>
+    </div>
+
+    <form #f="ngForm" (ngSubmit)="submit(f)">
+        <div class="form-group">
+            <label for="name">Project Name</label>
+            <input class="form-control" ngModel required name="name" id="name" #name="ngModel" />
+            <div class="form-control alert-danger" *ngIf="name.invalid && name.touched">Invalid entry</div>
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="idea">Summarize Idea</label>
+            <input class="form-control" ngModel required name="idea" id="idea" #idea="ngModel" />
+            <div class="form-control alert-danger" *ngIf="idea.invalid && idea.touched">Invalid entry</div>
+        </div>
+        <div class="form-group">
+            <label for="about">About Idea</label>
+            <input class="form-control" ngModel required name="about" id="about" #about="ngModel" />
+            <div class="form-control alert-danger" *ngIf="about.invalid && about.touched">Invalid entry</div>
+        </div>
+        <div class="form-group">
+            <label>Project type</label>
+            <select class="form-control" #proj_type="ngModel" ngModel name="proj_type" id="proj_type" required>
+                <option value="None">---select any package---</option>
+                <option *ngFor="let category of categories">{{category}}</option>
+            </select>
+            <div class="alert alert-danger" *ngIf="proj_type.invalid && proj_type.touched">Invalid entry</div>
+        </div>
+        <div class="form-group">
+            <label for="prod_desc">Describe Product</label>
+            <input class="form-control" ngModel required name="prod_desc" id="prod_desc" #prod_desc="ngModel" />
+            <div class="form-control alert-danger" *ngIf="prod_desc.invalid && prod_desc.touched">Invalid entry</div>
+        </div>
+        <div class="form-group">
+            <label for="funds">Total Funds Required </label>
+            <input type="number" class="form-control" ngModel required name="funds" id="funds" #funds="ngModel" />
+            <div class="form-control alert-danger" *ngIf="funds.invalid && funds.touched">Invalid entry</div>
+        </div>
+        <div class="form-group">
+            <label for="end_date">Funding Days Required</label>
+            <input type="date" ngModel name="end_date" id="end_date" #end_date="ngModel" ngModel required class="form-control" [(ngModel)]="myDate"
+            />
+            <div class="alert alert-danger" *ngIf="end_date.invalid && end_date.touched">Enter the registration date </div>
+        </div>
+        <div class="form-group">
+            <label for="prod_images1">Upload photos supporting your idea</label>
+            <input type="file" ngModel name="prod_images1" id="prod_images1" #prod_images1="ngModel" ngModel required class="form-control" >
+            <div class="alert alert-danger" *ngIf="prod_images1.invalid && prod_images1.touched">Invalid Entry</div>
+        </div>
+        <div class="form-group">
+            <label for="prod_images2"></label>
+            <input type="file" ngModel name="prod_images2" id="prod_images2" #prod_images2="ngModel" ngModel required class="form-control" >
+            <div class="alert alert-danger" *ngIf="prod_images2.invalid && prod_images2.touched">Invalid Entry</div>
+        </div>
+        <button class="btn btn-primary" [disabled]="!f.valid" type="submit">Submit</button>
+    </form>
+</div>
+<app-footer></app-footer>
