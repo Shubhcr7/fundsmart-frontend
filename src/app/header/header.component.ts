@@ -22,4 +22,9 @@ export class HeaderComponent implements OnInit {
       console.log('FAILEd');
     }
   }
+  myFunc(f){
+    console.log(f.value);
+    // this.router.navigate(['search-result']);
+    this.router.navigate(['/search-result'],{ queryParams: { search_key:f.value.search_key }});
+  }
 }

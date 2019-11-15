@@ -1,3 +1,4 @@
+import { CategoriesComponent } from './categories/categories.component';
 import { TestComponent } from './test/test.component';
 import { CreateProjectComponent } from './create-project/create-project.component';
 import { ProjectComponent } from './project/project.component';
@@ -9,6 +10,7 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
 import { HomeComponent } from './home/home.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { SearchResultComponent } from './search-result/search-result.component';
 
 
 const routes: Routes = [
@@ -19,6 +21,8 @@ const routes: Routes = [
   {path:'blog',component:BlogComponent},
   {path:'project',component:ProjectComponent},
   {path:'create-project',component:CreateProjectComponent},
+  {path:'category',component:CategoriesComponent},
+  {path:'search-result',component:SearchResultComponent},
   {path:'test',component:TestComponent}
 ];
 

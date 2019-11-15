@@ -61,11 +61,11 @@
                     <a href="#" class="btn btn-black sys_show_popup_login">Login</a>
                 </div>
                 <div class="form-search">
-                    <form action="#">
-                        <label for="sys_txt_keyword">
-                            <input id="sys_txt_keyword" class="txt-keyword" type="text" placeholder="Search projects" />
+                    <form #f2=ngForm (ngSubmit)=myFunc(f2) >
+                        <label for="search_key">
+                            <input id="search_key" required class="txt-keyword" type="text" placeholder="Search projects" name="search_key" ngModel #search_key="ngModel" />
                         </label>
-                        <button class="btn-search" type="reset">
+                        <button class="btn-search" type="submit" [disabled]="!f2.valid">
                             <i class="icon iMagnifier"></i>
                         </button>
                         <button class="btn-reset-keyword" type="reset">
@@ -82,7 +82,7 @@
                 </h1>
                 <div class="main-nav clearfix">
                     <div class="nav-item">
-                        <a href="category.html" class="nav-title">Discover</a>
+                        <a routerLink="/category" class="nav-title">Discover</a>
                         <p class="rs nav-description">Great Projects</p>
                     </div>
                     <span class="sep"></span>

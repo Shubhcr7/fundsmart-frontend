@@ -19,6 +19,8 @@ import { BlogComponent } from './blog/blog.component';
 import { ProjectComponent } from './project/project.component';
 import { CreateProjectComponent } from './create-project/create-project.component';
 import { TestComponent } from './test/test.component';
+import { CategoriesComponent } from './categories/categories.component';
+import { SearchResultComponent } from './search-result/search-result.component';
 
 
 @NgModule({
@@ -39,6 +41,8 @@ import { TestComponent } from './test/test.component';
     ProjectComponent,
     CreateProjectComponent,
     TestComponent,
+    CategoriesComponent,
+    SearchResultComponent,
   ],
   imports: [
     BrowserModule,

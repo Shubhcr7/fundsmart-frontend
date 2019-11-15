@@ -12,7 +12,7 @@ export class TestComponent implements OnInit {
   }
   ngOnInit(){
     this.http.get('http://localhost:3000/getData').subscribe((res)=>{
-      this.name1=res.name;
+      // this.name1=res.name;
     })
   }
   myFunc(f){
