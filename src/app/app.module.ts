@@ -21,6 +21,9 @@ import { CreateProjectComponent } from './create-project/create-project.componen
 import { TestComponent } from './test/test.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { SearchResultComponent } from './search-result/search-result.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
 
 
 @NgModule({
@@ -43,6 +46,9 @@ import { SearchResultComponent } from './search-result/search-result.component';
     TestComponent,
     CategoriesComponent,
     SearchResultComponent,
+    LoginComponent,
+    RegisterComponent,
+    UserProfileComponent,
   ],
   imports: [
     BrowserModule,

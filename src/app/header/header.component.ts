@@ -1,6 +1,9 @@
+import { CheckLoginService } from './../check-login.service';
 import { FormsModule } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
-import {Router} from '@angular/router';
+import { Router } from '@angular/router';
+import { environment } from '../../environments/environment';
+
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -8,23 +11,29 @@ import {Router} from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(public router:Router) { }
+  displayLog: boolean
+  constructor(public router: Router, public checkLog: CheckLoginService) { }
 
   ngOnInit() {
+    if (this.checkLog.isValid()) {
+      this.displayLog = true;
+    }
+    else {
+      this.displayLog = false;
+    }
   }
 
-  submit(f){
-    if(f.value.txt_email_login=='Shubham' && f.value.txt_password_login=='Sharma'){
-      console.log('LOGIN');
-      this.router.navigate(['project']);
-    }
-    else{
-      console.log('FAILEd');
+  logOut() {
+    if (window.confirm('Are you sure to logout  ?')) {
+      sessionStorage.setItem(environment.login, 'false');
+      this.displayLog = false;
+      this.router.navigate(['/']);
     }
   }
-  myFunc(f){
+
+  myFunc(f) {
     console.log(f.value);
     // this.router.navigate(['search-result']);
-    this.router.navigate(['/search-result'],{ queryParams: { search_key:f.value.search_key }});
+    this.router.navigate(['/search-result'], { queryParams: { search_key: f.value.search_key } });
   }
 }

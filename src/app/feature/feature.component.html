@@ -5,7 +5,8 @@
                 <h3 class="title-welcome rs">Welcome to FundsMart!</h3>
                 <p class="description rs">We aim to be the one stop platform where users can find talents to realize and fundraise for their ideas.</p>
                 <nav class="lst-category">
-                    <ul class="rs nav nav-category"> <!--categoreis goes here -->
+                    <ul class="rs nav nav-category">
+                        <!--categoreis goes here -->
                         <li *ngFor="let category of categories; let i=index" (click)="myFunc(i)" id="{{'cate'+i}}">
                             <a>
                                 {{category}}
@@ -25,10 +26,10 @@
         <div class="grid_8 marked-category">
             <div class="wrap-title clearfix">
                 <h2 class="title-mark rs">Staff Picks:
-                    <span class="fc-orange" id="cate" >{{categories[2]}}</span>
+                    <span class="fc-orange" id="cate">{{categories[2]}}</span>
                 </h2>
-                <a href="category.html" class="count-project be-fc-orange">See all
-                    <span class="fw-b">24</span> Design projects</a>
+                <!-- <a href="category.html" class="count-project be-fc-orange">See all
+                    <span class="fw-b">24</span> Design projects</a> -->
             </div>
             <div class="box-marked-project project-short">
                 <div class="top-project-info">
@@ -46,11 +47,11 @@
                             </p>
                             <p class="rs title-description">Plates, bowls, and mugs made from recycled ceramics, by a Turner Prize-winning team.</p>
                         </div>
-                        <p class="rs clearfix comment-view">
+                        <!-- <p class="rs clearfix comment-view">
                             <a href="#" class="fc-gray be-fc-orange">75 comments</a>
                             <span class="sep">|</span>
                             <a href="#" class="fc-gray be-fc-orange">378 views</a>
-                        </p>
+                        </p> -->
                     </div>
                 </div>
                 <!--end: .top-project-info -->

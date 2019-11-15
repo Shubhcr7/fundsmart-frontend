@@ -1,0 +1,36 @@
+<app-header></app-header>
+<div class="grid_12">
+    <div class="form login-form">
+        <form #f="ngForm" (ngSubmit)="submit(f)">
+            <h3 class="rs title-form">Login</h3>
+            <div class="box-white">
+                <h4 class="rs title-box">Already Have an Account?</h4>
+                <p class="rs">Please log in to continue.</p>
+                <div class="form-action">
+                    <label for="txt_email_login">
+                        <input id="txt_email_login" class="txt fill-width" type="email" required placeholder="Enter your e-mail address" ngModel
+                            name="txt_email_login" #txt_email_login="ngModel" />
+                        <div class="form-control alert-danger" *ngIf="txt_email_login.invalid && txt_email_login.touched">Invalid entry</div>
+                    </label>
+                    <label for="txt_password_login">
+                        <input id="txt_password_login" class="txt fill-width" type="password" required placeholder="Enter password" ngModel name="txt_password_login"
+                            #txt_password_login="ngModel" />
+                        <div class="form-control alert-danger" *ngIf="txt_password_login.invalid && txt_password_login.touched">Invalid entry</div>
+                    </label>
+
+                    <label for="chk_remember" class="rs pb20 clearfix">
+                        <input id="chk_remember" type="checkbox" class="chk-remember" />
+                        <span class="lbl-remember">Remember me</span>
+                    </label>
+                    <p class="rs ta-c pb10">
+                        <button class="btn btn-red btn-submit" [disabled]="!f.valid && !f.touched" type="submit">Login</button>
+                    </p>
+                    <p class="rs ta-c">
+                        <a href="#" class="fc-orange">I forgot my password</a>
+                    </p>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<!-- <app-footer></app-footer> -->

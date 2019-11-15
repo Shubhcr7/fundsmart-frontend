@@ -57,13 +57,18 @@
         <div class="grid_12 header-content">
             <div id="sys_header_right" class="header-right">
                 <div class="account-panel">
-                    <a href="#" class="btn btn-red sys_show_popup_login">Register</a>
-                    <a href="#" class="btn btn-black sys_show_popup_login">Login</a>
+                    <a routerLink="/register" *ngIf="!displayLog" class="btn btn-red ">Register</a>
+                    <a routerLink="/login" *ngIf="!displayLog" class="btn btn-red ">Login</a>
+                </div>
+                <div class="account-panel">
+                    <a routerLink="/user-profile" class="btn btn-red " *ngIf="displayLog">Your Profile</a>
+                    <button class="btn btn-red" *ngIf="displayLog" (click)=logOut()>Logout</button>
                 </div>
                 <div class="form-search">
-                    <form #f2=ngForm (ngSubmit)=myFunc(f2) >
+                    <form #f2=ngForm (ngSubmit)=myFunc(f2)>
                         <label for="search_key">
-                            <input id="search_key" required class="txt-keyword" type="text" placeholder="Search projects" name="search_key" ngModel #search_key="ngModel" />
+                            <input id="search_key" required class="txt-keyword" type="text" placeholder="Search projects" name="search_key" ngModel #search_key="ngModel"
+                            />
                         </label>
                         <button class="btn-search" type="submit" [disabled]="!f2.valid">
                             <i class="icon iMagnifier"></i>
@@ -98,7 +103,7 @@
 <!--end: #header -->
 
 <!-- login and registration  -->
-<div class="popup-common" id="sys_popup_common">
+<!-- <div class="popup-common" id="sys_popup_common">
     <div class="overlay-bl-bg"></div>
     <div class="container_12 pop-content">
         <div class="grid_12 wrap-btn-close ta-r">
@@ -180,4 +185,4 @@
         </div>
         <div class="clear"></div>
     </div>
-</div>
+</div> -->
