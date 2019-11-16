@@ -15,12 +15,12 @@
         <br>
         <div class="form-group">
             <label for="idea">Summarize Idea</label>
-            <input class="form-control" ngModel required name="idea" id="idea" #idea="ngModel" />
+            <textarea class="form-control" ngModel required name="idea" id="idea" #idea="ngModel" rows="4"></textarea>
             <div class="form-control alert-danger" *ngIf="idea.invalid && idea.touched">Invalid entry</div>
         </div>
         <div class="form-group">
             <label for="about">About Idea</label>
-            <input class="form-control" ngModel required name="about" id="about" #about="ngModel" />
+            <textarea class="form-control" ngModel required name="about" id="about" #about="ngModel" rows="4" ></textarea>
             <div class="form-control alert-danger" *ngIf="about.invalid && about.touched">Invalid entry</div>
         </div>
         <div class="form-group">
@@ -33,7 +33,7 @@
         </div>
         <div class="form-group">
             <label for="prod_desc">Describe Product</label>
-            <input class="form-control" ngModel required name="prod_desc" id="prod_desc" #prod_desc="ngModel" />
+            <textarea class="form-control" ngModel required name="prod_desc" id="prod_desc" #prod_desc="ngModel" rows="4"></textarea>
             <div class="form-control alert-danger" *ngIf="prod_desc.invalid && prod_desc.touched">Invalid entry</div>
         </div>
         <div class="form-group">
@@ -41,7 +41,7 @@
             <input type="number" class="form-control" ngModel required name="funds" id="funds" #funds="ngModel" />
             <div class="form-control alert-danger" *ngIf="funds.invalid && funds.touched">Invalid entry</div>
         </div>
-        <div class="form-group">
+        <!-- <div class="form-group">
             <label for="end_date">Funding Days Required</label>
             <input type="date" ngModel name="end_date" id="end_date" #end_date="ngModel" ngModel required class="form-control" [(ngModel)]="myDate"
             />
@@ -56,7 +56,7 @@
             <label for="prod_images2"></label>
             <input type="file" ngModel name="prod_images2" id="prod_images2" #prod_images2="ngModel" ngModel required class="form-control" >
             <div class="alert alert-danger" *ngIf="prod_images2.invalid && prod_images2.touched">Invalid Entry</div>
-        </div>
+        </div> -->
         <button class="btn btn-primary" [disabled]="!f.valid" type="submit">Submit</button>
     </form>
 </div>
