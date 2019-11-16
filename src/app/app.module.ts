@@ -1,3 +1,4 @@
+import { HttpserviceService } from './httpservice.service';
 import { BrowserModule } from '@angular/platform-browser';
 import {FormsModule} from '@angular/forms';
 import { NgModule } from '@angular/core';
@@ -24,7 +25,7 @@ import { SearchResultComponent } from './search-result/search-result.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
-
+import { NgxSpinnerModule } from "ngx-spinner";
 
 @NgModule({
   declarations: [
@@ -54,7 +55,8 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

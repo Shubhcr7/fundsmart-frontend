@@ -1,8 +1,9 @@
+import { environment } from './../../environments/environment';
+import { GetAccountsService } from './../get-accounts.service';
 import { CheckLoginService } from './../check-login.service';
 import { FormsModule } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-header',
@@ -11,10 +12,12 @@ import { environment } from '../../environments/environment';
 })
 export class HeaderComponent implements OnInit {
 
-  displayLog: boolean
-  constructor(public router: Router, public checkLog: CheckLoginService) { }
+  displayLog: boolean;
+  displaySpinner:boolean;
+  constructor(public router: Router, public checkLog: CheckLoginService, public getAccountsService: GetAccountsService) { }
 
   ngOnInit() {
+    this.displaySpinner=false;
     if (this.checkLog.isValid()) {
       this.displayLog = true;
     }
@@ -29,6 +32,16 @@ export class HeaderComponent implements OnInit {
       this.displayLog = false;
       this.router.navigate(['/']);
     }
+  }
+  getAccounts() {
+    this.displaySpinner=true;
+    this.getAccountsService.setAccounts();
+    setTimeout(() => {
+      this.displaySpinner=false;
+      this.router.navigate(['/category']);
+    },
+      5000);
+
   }
 
   myFunc(f) {
