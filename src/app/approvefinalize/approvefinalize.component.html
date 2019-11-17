@@ -1,0 +1,23 @@
+<app-header></app-header>
+<div class="container">
+    <h2>Spending Requets</h2>
+    <p>The .table-hover class enables a hover state (grey background on mouse over) on table rows:</p>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Spending Request Description</th>
+                <th>Approve</th>
+                <th>Finalize</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let d of data">
+                <td class="col-md-2">{{d.name}}</td>
+                <td><button (click)=approve()>Approve</button></td>
+                <td><button>Finalize</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<app-footer></app-footer>

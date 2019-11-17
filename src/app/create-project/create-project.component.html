@@ -37,9 +37,14 @@
             <div class="form-control alert-danger" *ngIf="prod_desc.invalid && prod_desc.touched">Invalid entry</div>
         </div>
         <div class="form-group">
-            <label for="funds">Total Funds Required </label>
+            <label for="funds">Minimum Contribution Amount</label>
             <input type="number" class="form-control" ngModel required name="funds" id="funds" #funds="ngModel" />
             <div class="form-control alert-danger" *ngIf="funds.invalid && funds.touched">Invalid entry</div>
+        </div>
+        <div class="form-group">
+            <label for="goal">Total Funds Required </label>
+            <input type="number" class="form-control" ngModel required name="goal" id="goal" #goal="ngModel" />
+            <div class="form-control alert-danger" *ngIf="goal.invalid && goal.touched">Invalid entry</div>
         </div>
         <!-- <div class="form-group">
             <label for="end_date">Funding Days Required</label>

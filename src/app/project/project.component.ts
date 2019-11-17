@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { environment } from './../../environments/environment';
 import { Component, OnInit } from '@angular/core';
 
@@ -11,7 +11,7 @@ import { Component, OnInit } from '@angular/core';
 export class ProjectComponent implements OnInit {
   search_key;
   min_fund;
-  constructor(public http: HttpClient, public activatedRoute: ActivatedRoute) { }
+  constructor(public http: HttpClient, public activatedRoute: ActivatedRoute,public router:Router) { }
 
   ngOnInit() {
     this.activatedRoute.queryParams.subscribe((param) => {
@@ -20,6 +20,9 @@ export class ProjectComponent implements OnInit {
     this.http.get(environment.url+'getd/'+this.search_key).subscribe(response=>{
       this.min_fund=response;
     });
+  }
+  navigateToRequests(){
+    this.router.navigate(['/approvefinalize'], {queryParams:{address:this.search_key}});
   }
 }
 
