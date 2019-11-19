@@ -7,8 +7,8 @@
                 <nav class="lst-category">
                     <ul class="rs nav nav-category">
                         <!--categoreis goes here -->
-                        <li *ngFor="let category of categories; let i=index" (click)="myFunc(i)" id="{{'cate'+i}}">
-                            <a>
+                        <li *ngFor="let category of categories; let i=index" (click)="routeToCategory(i)" id="{{'cate'+i}}">
+                            <a class="category-class">
                                 {{category}}
                                 <span class="Count-val">(12)</span>
                                 <i class="icon iPlugGray"></i>
