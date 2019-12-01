@@ -1,38 +1,47 @@
 <app-header></app-header>
 <div class="grid_11 prefix_1">
     <div class="form login-form">
-        <form action="#">
+        <form #f="ngForm" (ngSubmit)="submit(f)">
             <h3 class="rs title-form">Register</h3>
             <div class="box-white">
                 <h4 class="rs title-box">New to FundsMart?</h4>
                 <p class="rs">A FundsMart account is required to continue.</p>
                 <div class="form-action">
-                    <label for="txt_name">
-                        <input id="txt_name" class="txt fill-width" type="text" placeholder="Enter full name" />
+                    <label for="name">
+                        <input id="name" required class="txt fill-width" type="text" placeholder="Enter full name" ngModel name="name" #name="ngModel" />
                     </label>
+                    <div class="form-control alert-danger" *ngIf="name.invalid && name.touched">Invalid entry</div>
                     <div class="wrap-2col clearfix">
                         <div class="col">
-                            <label for="txt_email">
-                                <input id="txt_email" class="txt fill-width" type="email" placeholder="Enter your e-mail address" />
+                            <label for="email">
+                                <input id="email" class="txt fill-width" type="email" placeholder="Enter your e-mail address" required ngModel name="email" #email="ngModel"
+                                />
+                                <div class="form-control alert-danger" *ngIf="email.invalid && email.touched">Invalid entry</div>
                             </label>
-                            <label for="txt_re_email">
-                                <input id="txt_re_email" class="txt fill-width" type="email" placeholder="Re-enter your e-mail adress" />
+                            <label for="key">
+                                <input id="key" class="txt fill-width" type="text" required placeholder="Enter your ethereum key" ngModel name="key" #key="ngModel"
+                                />
+                                <div class="form-control alert-danger" *ngIf="key.invalid && key.touched">Invalid entry</div>
                             </label>
                         </div>
                         <div class="col">
-                            <label for="txt_password">
-                                <input id="txt_password" class="txt fill-width" type="password" placeholder="Enter password" />
+                            <label for="password">
+                                <input id="password" class="txt fill-width" type="password" required placeholder="Enter password" ngModel name="password" #password="ngModel"
+                                />
+                                <div class="form-control alert-danger" *ngIf="password.invalid && password.touched">Invalid entry</div>
                             </label>
-                            <label for="txt_re_password">
-                                <input id="txt_re_password" class="txt fill-width" type="password" placeholder="Re-enter password" />
+                            <label for="address">
+                                <input id="address" required class="txt fill-width" type="text" placeholder="Enter your account address" ngModel name="address" #address="ngModel"
+                                />
+                                <div class="form-control alert-danger" *ngIf="address.invalid && address.touched">Invalid entry</div>
                             </label>
                         </div>
                     </div>
-                    <p class="rs pb10">By signing up, you agree to our
+                    <!-- <p class="rs pb10">By signing up, you agree to our
                         <a href="#" class="fc-orange">terms of use</a> and
-                        <a href="#" class="fc-orange">privacy policy</a>.</p>
+                        <a href="#" class="fc-orange">privacy policy</a>.</p> -->
                     <p class="rs ta-c">
-                        <button class="btn btn-red btn-submit" type="submit">Register</button>
+                        <button class="btn btn-red btn-submit" [disabled]="!f.valid" type="submit">Register</button>
                     </p>
                 </div>
             </div>
