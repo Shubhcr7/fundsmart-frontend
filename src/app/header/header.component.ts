@@ -31,7 +31,7 @@ export class HeaderComponent implements OnInit {
     swal({
       title: "Are you sure to logout ?",
       icon: "warning",
-      buttons: true,
+      buttons: ["Cancel","Logout"],
       dangerMode: true,
     })
       .then((willLogout) => {

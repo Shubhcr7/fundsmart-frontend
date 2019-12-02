@@ -23,45 +23,47 @@
                 <div class="tab-content">
                     <div>
                         <h3 class="rs alternate-tab accordion-label">Projects</h3>
-                        <div class="tab-pane accordion-content active" >
-                            <div class="box-marked-project project-short inside-tab">
+                        <div class="tab-pane accordion-content active">
+                            <div class="box-marked-project project-short inside-tab" *ngFor="let project of my_projects;let i=index">
                                 <div class="top-project-info">
                                     <div class="content-info-short clearfix">
-                                        <a href="#" class="thumb-img">
-                                            <img src="images/ex/th-292x204-1.jpg" alt="$TITLE">
+                                        <a class="thumb-img">
+                                            <img src={{project.img}} alt="Product Image">
                                         </a>
                                         <div class="wrap-short-detail">
                                             <h3 class="rs acticle-title">
-                                                <a class="be-fc-orange" href="#">LYK and Bear #1: No Food Deed Unpunished</a>
+                                                <a class="be-fc-orange">{{project.title}}</a>
                                             </h3>
-                                            <!-- <p class="rs tiny-desc">by
-                                                <a href="#" class="fw-b fc-gray be-fc-orange">Ray Sumser</a> in
-                                                <span class="fw-b fc-gray">New York, NY</span>
-                                            </p> -->
-                                            <p class="rs title-description">Nam sit amet est sapien, a faucibus purus. Sed commodo facilisis tempus. Pellentesque
-                                                placerat elementum adipiscing.</p>
+                                        </div>
+                                        <div class="wrap-short-detail">
+                                            <p class="rs acticle-title" style="font-size: 90%">
+                                                {{project.description}}
+                                            </p>
                                         </div>
                                     </div>
                                 </div>
                                 <!--end: .top-project-info -->
                                 <div class="bottom-project-info clearfix">
-                                    <div class="project-progress sys_circle_progress" data-percent="33">
-                                        <div class="sys_holder_sector"></div>
-                                    </div>
                                     <div class="group-fee clearfix">
                                         <div class="fee-item">
+                                            <button type="button" class="btn btn-primary" data-toggle="modal" [attr.data-target]="'#modal'+i">
+                                                Create Request
+                                            </button>
+                                        </div>
+                                        <div class="sep"></div>
+                                        <div class="fee-item">
                                             <p class="rs lbl">Bankers</p>
-                                            <span class="val">270</span>
+                                            <span class="val">{{project.bankers}}</span>
                                         </div>
                                         <div class="sep"></div>
                                         <div class="fee-item">
                                             <p class="rs lbl">Pledged</p>
-                                            <span class="val">$38,000</span>
+                                            <span class="val">{{project.pledged}}</span>
                                         </div>
                                         <div class="sep"></div>
                                         <div class="fee-item">
                                             <p class="rs lbl">Days Left</p>
-                                            <span class="val">25</span>
+                                            <span class="val">{{project.days}}</span>
                                         </div>
                                     </div>
                                     <div class="clear"></div>
@@ -90,4 +92,46 @@
     <!--end: .sidebar -->
     <div class="clear"></div>
 </div>
+<div class="container" *ngFor="let project of my_projects;let i=index">
+    <!-- The Modal -->
+    <div class="modal" [attr.id]="'modal'+i">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h5 class="modal-title">Provide description and amount you want to spend for it. </h5>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <form #f="ngForm" (ngSubmit)="createRequest(f,project.address)">
+                    <div class="form-group">
+                        <label for="description">Describe your spending need</label>
+                        <textarea class="form-control" ngModel required name="description" id="description" #description="ngModel" rows="3"></textarea>
+                        <div class="form-control alert-danger" *ngIf="description.invalid && description.touched">Invalid entry</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="value">Funds needed</label>
+                        <input type="number" class="form-control" ngModel required name="value" id="value" #value="ngModel" />
+                        <div class="form-control alert-danger" *ngIf="value.invalid && value.touched">Invalid entry</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="recipient">Recipient Address</label>
+                        <input type="text" class="form-control" ngModel required name="recipient" id="recipient" #recipient="ngModel" />
+                        <div class="form-control alert-danger" *ngIf="recipient.invalid && recipient.touched">Invalid entry</div>
+                    </div>
+                    <button class="btn btn-primary" [disabled]="!f.valid" type="submit">Submit</button>
+                </form>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
 <app-footer></app-footer>

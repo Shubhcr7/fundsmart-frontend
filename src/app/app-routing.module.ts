@@ -1,3 +1,4 @@
+
 import { ApprovefinalizeComponent } from './approvefinalize/approvefinalize.component';
 import { LoginComponent } from './login/login.component';
 import { CategoriesComponent } from './categories/categories.component';
@@ -15,6 +16,7 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 
 
 
+
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'contact', component: ContactUsComponent },
@@ -26,7 +28,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'user-profile', component: UserProfileComponent },
-  { path: 'approvefinalize', component: ApprovefinalizeComponent }
+  { path: 'approvefinalize', component: ApprovefinalizeComponent },
 ];
 
 @NgModule({

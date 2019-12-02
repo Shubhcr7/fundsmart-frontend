@@ -22,16 +22,16 @@ export class RegisterComponent implements OnInit {
       text: "Please ensure to enter valid account details",
       icon: "warning",
       dangerMode: true,
-      buttons: true
+      buttons: ["Cancel","Register"]
     })
       .then(willPublish => {
         if (willPublish) {
           swal({
             title: 'Now registering...',
-            buttons: false
+            buttons: [false]
           });
           this.http.post(environment.url + 'createcampaign', f.value).subscribe(res => {
-            swal("Registered", "You have been successfully registered", "Success");
+            swal("Registered", "You have been successfully registered", "success");
           })
 
         }

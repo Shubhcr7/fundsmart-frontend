@@ -25,7 +25,7 @@ import { RegisterComponent } from './register/register.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { NgxSpinnerModule } from "ngx-spinner";
 import { ApprovefinalizeComponent } from './approvefinalize/approvefinalize.component';
-
+import { AngularFileUploaderModule} from "angular-file-uploader";
 
 @NgModule({
   declarations: [
@@ -56,6 +56,7 @@ import { ApprovefinalizeComponent } from './approvefinalize/approvefinalize.comp
     AppRoutingModule,
     HttpClientModule,
     NgxSpinnerModule,
+    AngularFileUploaderModule
   ],
   providers: [],
   bootstrap: [AppComponent]

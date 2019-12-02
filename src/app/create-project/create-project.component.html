@@ -6,7 +6,7 @@
             <br> Fill in the required details of your idea </h1>
     </div>
 
-    <form #f="ngForm" (ngSubmit)="submit(f)">
+    <form #f="ngForm" (ngSubmit)="submit(f)" enctype="multipart/form-data" >
         <div class="form-group">
             <label for="name">Project Name</label>
             <input class="form-control" ngModel required name="name" id="name" #name="ngModel" />
@@ -20,7 +20,7 @@
         </div>
         <div class="form-group">
             <label for="about">About Idea</label>
-            <textarea class="form-control" ngModel required name="about" id="about" #about="ngModel" rows="4" ></textarea>
+            <textarea class="form-control" ngModel required name="about" id="about" #about="ngModel" rows="4"></textarea>
             <div class="form-control alert-danger" *ngIf="about.invalid && about.touched">Invalid entry</div>
         </div>
         <div class="form-group">
@@ -51,15 +51,15 @@
             <input type="date" ngModel name="end_date" id="end_date" #end_date="ngModel" ngModel required class="form-control" [(ngModel)]="myDate"
             />
             <div class="alert alert-danger" *ngIf="end_date.invalid && end_date.touched">Enter the registration date </div>
-        </div>
+        </div> -->
         <div class="form-group">
             <label for="prod_images1">Upload photos supporting your idea</label>
-            <input type="file" ngModel name="prod_images1" id="prod_images1" #prod_images1="ngModel" ngModel required class="form-control" >
+            <input type="file" #fileInput1 ngModel name="prod_images1" id="prod_images1" #prod_images1="ngModel" ngModel required class="form-control">
             <div class="alert alert-danger" *ngIf="prod_images1.invalid && prod_images1.touched">Invalid Entry</div>
         </div>
-        <div class="form-group">
+        <!-- <div class="form-group">
             <label for="prod_images2"></label>
-            <input type="file" ngModel name="prod_images2" id="prod_images2" #prod_images2="ngModel" ngModel required class="form-control" >
+            <input type="file" #fileInput2 ngModel name="prod_images2" id="prod_images2" #prod_images2="ngModel" ngModel required class="form-control">
             <div class="alert alert-danger" *ngIf="prod_images2.invalid && prod_images2.touched">Invalid Entry</div>
         </div> -->
         <button class="btn btn-primary" [disabled]="!f.valid" type="submit">Submit</button>
